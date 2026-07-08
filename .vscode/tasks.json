@@ -1,0 +1,68 @@
+/*
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build MPI active file",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "${file}",
+                "-I",
+                "C:\\Program Files (x86)\\Microsoft SDKs\\MPI\\Include",
+                "-L",
+                "C:\\Program Files (x86)\\Microsoft SDKs\\MPI\\Lib\\x64",
+                "-lmsmpi",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        }
+    ]
+} */
+
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build C++ MPI",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "${file}",
+                "-Wall",
+                "-Wextra",
+                "-std=c++17",
+                "-I", "C:\\Program Files (x86)\\Microsoft SDKs\\MPI\\Include",
+                "-L", "C:\\Program Files (x86)\\Microsoft SDKs\\MPI\\Lib\\x64",
+                "-lmsmpi",
+                "-o", "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "group": "build",
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "Build C MPI",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "${file}",
+                "-Wall",
+                "-Wextra",
+                "-std=c17",
+                "-I", "C:\\Program Files (x86)\\Microsoft SDKs\\MPI\\Include",
+                "-L", "C:\\Program Files (x86)\\Microsoft SDKs\\MPI\\Lib\\x64",
+                "-lmsmpi",
+                "-o", "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "group": "build",
+            "problemMatcher": "$gcc"
+        }
+    ]
+}

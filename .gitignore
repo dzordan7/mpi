@@ -1,0 +1,37 @@
+# Executable files
+*.exe
+
+# Object files
+*.obj
+*.o
+
+# Debug symbols
+*.pdb
+*.ilk
+*.idb
+
+# Static/Dynamic libraries
+*.lib
+*.dll
+*.a
+
+
+# Build directories
+Debug/
+Release/
+build/
+x64/
+x86/
+
+
+# CMake
+
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+compile_commands.json
+
+# Temporary files
+*.tmp
+*.log
