@@ -30,6 +30,7 @@ int main(int argc, char *argv[])
     }
 
     MPI_Scatter(a, n_bar, MPI_FLOAT, local_a, n_bar, MPI_FLOAT, 0, MPI_COMM_WORLD);
+
     if (my_rank == 0)
     {
         for (i = 0; i < n; i++)
