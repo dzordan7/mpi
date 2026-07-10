@@ -19,8 +19,7 @@ int main(int argc, char *argv[])
     int prod[s];
     int local_c[n * k / p];
 
-    MPI_Datatype singlecol,
-        multicol, resized, resizedSingle;
+    MPI_Datatype singlecol, multicol, resized, resizedSingle;
     MPI_Type_vector(s, 1, k, MPI_INT, &singlecol);
     MPI_Type_commit(&singlecol);
     MPI_Type_create_resized(singlecol, 0, sizeof(int), &resizedSingle);
@@ -136,10 +135,6 @@ int main(int argc, char *argv[])
     MPI_Type_free(&resizedSingle);
     MPI_Type_free(&newtype);
     MPI_Type_free(&resizedNew);
-    // MPI_Type_free(&singleColC);
-    // MPI_Type_free(&resizedSingleColC);
-    // MPI_Type_free(&multiColC);
-    // MPI_Type_free(&resizedMultiColC);
 
     MPI_Finalize();
 
